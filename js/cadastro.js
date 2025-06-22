@@ -21,11 +21,10 @@ function mostrarPreview(event) {
     if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
-            imagemBase64 = e.target.result;
-            posterFilme = imagemBase64;
+            posterFilme = e.target.result;
             
             const img = document.getElementById("previewImage");
-            img.src = imagemBase64;
+            img.src = posterFilme;
             img.classList.remove("d-none");
 
             // Esconde ícone
@@ -301,17 +300,15 @@ async function carregarFilmeTMDB(idTMDB) {
                 const blob = await respostaImg.blob();
                 const reader = new FileReader();
                 reader.onloadend = function () {
-                    imagemBase64 = reader.result;
+                    posterFilme = reader.result;
                 };
                 reader.readAsDataURL(blob);
 
                 // Aguarda a leitura do base64 antes de continuar
                 await new Promise(resolve => reader.onloadend = () => {
-                    imagemBase64 = reader.result;
+                    posterFilme = reader.result;
                     resolve();
                 });
-
-                posterFilme = imagemBase64;
             } catch (erro) {
                 console.warn("Erro ao converter imagem para base64. Salvando apenas o caminho:", erro);
                 posterFilme = filme.poster_path;

@@ -13,6 +13,7 @@ if (filme) {
     } else {
         capa = filme.capa; // caminho local
     }
+    
     const [ano, mes, dia] = filme.dataAdicao.split("-");
     const dataFormatada = `${dia}/${mes}/${ano}`;
 

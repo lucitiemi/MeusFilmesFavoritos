@@ -13,7 +13,7 @@ header {
 }
 
 .title-font {
-    font-family: "Josefin Sans", serif;
+    font-family: "Libre Bodoni", serif;
 }
 
 .header-img {
@@ -31,6 +31,15 @@ header {
 
 .bg-rosa {
     background-color: #917081;
+}
+.bg-roxo {
+    background-color: #1F0312;
+}
+.text-rosa {
+    color: #917081;
+}
+.bg-creme {
+    background-color: #FFF5DE;
 }
 
 .shadow-black {
